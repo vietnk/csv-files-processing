@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.csv'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
+	testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
+}
+tasks.withType(Test) {
+	useJUnitPlatform()
+	jvmArgs '--enable-preview'
+}
+//test {
+//	useJUnitPlatform()
+//}
+//test {
+//	useJUnit()
+//	maxHeapSize = '1G'
+//}
